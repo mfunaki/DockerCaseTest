@@ -1,0 +1,17 @@
+version: 2.1
+
+workflows:
+  my_workflow:
+    jobs:
+      - my_job
+
+jobs:
+  my_job:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - run: |
+          echo 'hello' > abc.txt
+          cat abc.txt
+          cat Abc.txt
